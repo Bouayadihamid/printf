@@ -8,42 +8,25 @@
 int _printf(const char *format, ...)
 {
 	int printed = 0;
+
 	va_list args;
 
 	va_start(args, format);
-	while (*format)
+
+	while (*format != '\0')
 	{
 		if (*format != '%')
 		{
-			write(1, format, 1);
-			printed++;
+			format++;
+			printed = selector(format, args, printed);
+			format++;
 		}
 		else
 		{
+			_putchar(*format);
+			printed++;
 			format++;
-			if (*format == '\0')
-				break;
-			if (*format == '%')
-			{
-				write(1, format, 1);
-				printed++;
-			}
-			else if (*format == 'c')
-			{
-				char c = va_arg(args, int);
-
-				write(1, &c, 1);
-				printed++;
-			}
-			else if (*format == 's')
-			{
-				char *str = va_arg(args, char*);
-				int str_len = strlen(str);
-				write(1, str, str_len);
-				printed += str_len;
-			}
 		}
-		format++;
 	}
 	va_end(args);
 	return (printed);
