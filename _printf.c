@@ -33,14 +33,14 @@ int _printf(const char *format, ...)
 					count++;
 					break;
 				default:
-					putchar('%');
+					_putchar('%');
 					count++;
 					break;
 			}
 		}
 		else
 		{
-			putchar(*format);
+			_putchar(*format);
 			count++;
 		}
 		format++;
