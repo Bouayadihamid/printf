@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format != '%')
 		{
-			rite(1, format, 1);
+			write(1, format, 1);
 			printed++;
 		}
 		else
