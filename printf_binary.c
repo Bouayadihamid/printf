@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * printf_binary - prints a binary number
  * @num: number of arguments
@@ -9,7 +8,7 @@
 
 int printf_binary(unsigned int num, int printed)
 {
-	int binary[32] = {0};
+	int binary[64] = {0};
 	int i = 0;
 
 	if (num == 0)
