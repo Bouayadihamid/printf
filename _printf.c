@@ -6,8 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	char c = va_arg(args, int), *str = va_arg(args, char*);
-	int printed = 0, str_len = 0;
+	int printed = 0;
 	va_list args;
 
 	va_start(args, format);
@@ -30,13 +29,15 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'c')
 			{
+				char c = va_arg(args, int);
+
 				write(1, &c, 1);
 				printed++;
 			}
 			else if (*format == 's')
 			{
-			while (str[str_len] != '\0')
-				str_len++;
+				char *str = va_arg(args, char*);
+				int str_len = 0;
 			write(1, str, str_len);
 			printed += str_len;
 			}
