@@ -1,21 +1,30 @@
 #include "main.h"
 
 /**
- * printf_string - prints a string
- * @args: number of arguments
- * @printed: the printed characters
- * Return: printed characters
+ * printf_string - function for string.
+ * @var: argument.
+ * Return: the len of string.
  */
 
-int printf_string(va_list args, int printed)
+int printf_string(va_list var)
 {
-	char *string = va_arg(args, char *);
+	char *s;
+	int i, len;
 
-	while (*string != '\0')
+	s = va_arg(var, char *);
+	if (s == NULL)
 	{
-		_putchar(*string);
-		printed++;
-		string++;
+		s = "(null)";
+		len = _strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
 	}
-	return (printed);
+	else
+	{
+		len = _strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
+	}
 }
