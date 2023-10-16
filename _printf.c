@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printf - produces output according to a format
  * @format: format specifier
@@ -15,7 +14,7 @@ int _printf(const char *format, ...)
 
 	while (*format != '\0')
 	{
-		if (*format != '%')
+		if (*format == '%')
 		{
 			format++;
 			printed = selector(format, args, printed);
