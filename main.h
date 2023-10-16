@@ -2,21 +2,47 @@
 #define MAIN_H
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
-#include <unistd.h>
 #include <limits.h>
+#include <unistd.h>
 
+
+
+/**
+ * struct format - the conversion
+ * @f: pointer
+ * @id: char pointer
+ */
+
+typedef struct format
+{
+	char *id;
+	int (*f)();
+} conver_t;
+
+int printf_pointer(va_list var);
+int printf_h_a(unsigned long int num);
+int printf_H_a(unsigned int num);
+int printf_ex_Str(va_list var);
+int printf_H(va_list var);
+int printf_h(va_list var);
+int printf_octal(va_list var);
+int printf_unsigned(va_list args);
+int printf_binary(va_list var);
+int printf_sreverse(va_list args);
+int printf_rot13(va_list args);
+int printf_integer(va_list args);
+int printf_declaretion(va_list args);
+int _strlen(char *s);
+int *_strcpy(char *dest, char *src);
+int _strlenc(const char *s);
+int rev_string(char *s);
+int _strlenc(const char *s);
+int printf_37(void);
+int printf_char(va_list var);
+int printf_string(va_list var);
 int _putchar(char c);
-int printf_char(va_list args, int printed);
-int printf_string(va_list args, int printed);
-int printf_integer(va_list args, int printed);
-int selector(const char *format, va_list args, int printed);
-int printf_binary(unsigned int num, int printed);
 int _printf(const char *format, ...);
-int _x(unsigned int num, int printed, int uppercase);
-int printf_octal(unsigned int num, int printed);
-int printf_unsigned(unsigned int num, int printed);
-int printf_reverse(va_list args, int printed);
-int printf_pointer(va_list args);
 
 #endif
