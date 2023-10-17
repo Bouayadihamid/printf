@@ -1,15 +1,14 @@
 #include "main.h"
-
 /**
- * printf_char - function for a char.
- * @var: arguments.
- * Return: 1.
+ * printf_char - prints a binary
+ * @args: args
+ * @count: print char
+ * Return: print char
  */
-int printf_char(va_list var)
+int printf_char(va_list args, int count)
 {
-	char s;
+	int character = va_arg(args, int);
 
-	s = va_arg(var, int);
-	_putchar(s);
-	return (1);
+	_putchar(character);
+	return (count + 1);
 }
