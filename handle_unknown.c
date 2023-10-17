@@ -4,7 +4,6 @@
  *handle_unknown_specifier- is a function
  *
  *@format: is the format
- *@args: arguments
  *
  *Return: return -1
  */
