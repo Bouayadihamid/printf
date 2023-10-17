@@ -19,4 +19,4 @@ int printf_unsigned(unsigned int num, int count);
 int printf_sreverse(va_list args, int count);
 int printf_pointer(va_list args, int count);
 
-#endif /* MAIN_H */
+#endif
