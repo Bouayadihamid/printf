@@ -1,17 +1,18 @@
 #include "main.h"
+
 /**
- * printf_pointer - prints an hex pointer
- * @var: args
- * Return: count
+ * printf_pointer - prints an hexgecimal number.
+ * @args: arguments.
+ * Return: counter.
  */
-int printf_pointer(va_list var)
+int printf_pointer(va_list args)
 {
 	void *p;
 	char *s = "(nil)";
 	long int a;
 	int b, i;
 
-	p = va_arg(var, void*);
+	p = va_arg(args, void*);
 	if (p == NULL)
 	{
 		for (i = 0; s[i] != '\0'; i++)
@@ -24,6 +25,6 @@ int printf_pointer(va_list var)
 	a = (unsigned long int)p;
 	_putchar('0');
 	_putchar('x');
-	b = printf_h_a(a);
+	b = printf_hex(a);
 	return (b + 2);
 }
