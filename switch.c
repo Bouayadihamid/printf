@@ -40,9 +40,6 @@ int selector(const char *format, va_list args, int count)
 		case 'u':
 			count = printf_unsigned(va_arg(args, unsigned int), count);
 			break;
-		case 'r':
-			count = printf_sreverse(args, count);
-			break;
 		case 'p':
 			count = printf_pointer(args, count);
 			break;
