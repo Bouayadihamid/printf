@@ -38,7 +38,7 @@ int selector(const char *format, va_list args, int count)
 			count = printf_octal(va_arg(args, unsigned int), count);
 			break;
 		case 'u':
-			count = printf_unsigned(va_arg(args, int), count);
+			count = printf_unsigned(va_arg(args, unsigned int), count);
 			break;
 		case 'p':
 			count = printf_pointer(args, count);
