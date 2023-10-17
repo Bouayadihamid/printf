@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			count = selector(format, args, printed);
+			count = selector(format, args, count);
 			format++;
 		}
 		else
