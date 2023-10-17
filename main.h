@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <limits.h>
 
-int _putchar(char character);
+int _putchar(char c);
 int printf_char(va_list args, int count);
 int printf_string(va_list args, int count);
 int printf_integer(va_list args, int count);
@@ -18,5 +18,7 @@ int printf_octal(unsigned int num, int count);
 int printf_unsigned(unsigned int num, int count);
 int printf_sreverse(va_list args, int count);
 int printf_pointer(va_list args, int count);
+int handle_unknown_specifier(const char **format);
+
 
 #endif

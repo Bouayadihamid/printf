@@ -47,6 +47,7 @@ int selector(const char *format, va_list args, int count)
 			count = printf_pointer(args, count);
 			break;
 		default:
+			count = handle_unknown_specifier(&format);
 			break;
 	}
 	return (count);
