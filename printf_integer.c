@@ -1,42 +1,37 @@
 #include "main.h"
 /**
- * printf_integer - prints integer
- * @args: args
- * Return: nsum of char
+ * printf_integer - prints intiger
+ * @args: num args
+ * @count: The print char
+ * Return: print char
  */
-int printf_integer(va_list args)
+int printf_integer(va_list args, int count)
 {
-	int n = va_arg(args, int);
-	int num, last = n % 10, digit, exp = 1;
-	int  i = 1;
+	int num = va_arg(args, int);
+	int digits = 0;
+	int temp = num, digit;
 
-	n = n / 10;
-	num = n;
-	if (last < 0)
+	if (num < 0)
 	{
-		_putchar('-');
+		count += _putchar('-');
 		num = -num;
-		n = -n;
-		last = -last;
-		i++;
+		temp = num;
 	}
-	if (num > 0)
+	do {
+		digits++;
+		temp /= 10;
+	} while (temp != 0);
+	while (digits > 0)
 	{
-		while (num / 10 != 0)
-		{
-			exp = exp * 10;
-			num = num / 10;
-		}
-		num = n;
-		while (exp > 0)
-		{
-			digit = num / exp;
-			_putchar(digit + '0');
-			num = num - (digit * exp);
-			exp = exp / 10;
-			i++;
-		}
+		int pow10 = 1, i;
+
+		for (i = 1; i < digits; i++)
+			pow10 *= 10;
+
+		digit = num / pow10;
+		count += _putchar(digit + '0');
+		num -= digit * pow10;
+		digits--;
 	}
-	_putchar(last + '0');
-	return (i);
+	return (count);
 }

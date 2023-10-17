@@ -1,35 +1,43 @@
 #include "main.h"
-
 /**
- * printf_h - prints an hexgecimal
- * @var: args
- * Return: count
+ * printf_h - prints a binary
+ * @num: num args
+ * @count: print char
+ * @uppercase: uppercase
+ * Return: print char
  */
-int printf_h(va_list var)
+int printf_h(unsigned int num, int count, int uppercase)
 {
-	int i, *array, count = 0;
-	unsigned int num = va_arg(var, unsigned int);
-	unsigned int temp = num;
+	int hex[100], i = 0, j;
 
-	while (num / 16 != 0)
+	while (num != 0)
 	{
+		int rem = num % 16;
+
+		if (rem < 10)
+			hex[i] = 48 + rem;
+		else
+		{
+			if (uppercase)
+				hex[i] = 65 + (rem - 10);
+			else
+				hex[i] = 97 + (rem - 10);
+		}
+		i++;
 		num /= 16;
+	}
+	if (i == 0)
+	{
+		_putchar('0');
 		count++;
 	}
-	count++;
-	array = malloc(count * sizeof(int));
-
-	for (i = 0; i < count; i++)
+	else
 	{
-		array[i] = temp % 16;
-		temp /= 16;
+		for (j = i - 1; j >= 0; j--)
+		{
+			_putchar(hex[j]);
+			count++;
+		}
 	}
-	for (i = count - 1; i >= 0; i--)
-	{
-		if (array[i] > 9)
-			array[i] = array[i] + 39;
-		_putchar(array[i] + '0');
-	}
-	free(array);
 	return (count);
 }

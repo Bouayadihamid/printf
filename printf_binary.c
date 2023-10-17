@@ -1,32 +1,32 @@
 #include "main.h"
-
 /**
- * printf_binary - prints binary number.
- * @var: arguments.
- * Return: 1.
+ * printf_binary - prints a binary
+ * @num: num of args
+ * @count: print char
+ * Return: print char
  */
-int printf_binary(va_list var)
+int printf_binary(unsigned int num, int count)
 {
-	int flag = 0, cont = 0, i, a = 1, b;
-	unsigned int num = va_arg(var, unsigned int);
-	unsigned int p;
+	int binary[32] = {0};
+	int i = 0;
 
-	for (i = 0; i < 32; i++)
+	if (num == 0)
 	{
-		p = ((a << (31 - i)) & num);
-		if (p >> (31 - i))
-			flag = 1;
-		if (flag)
-		{
-			b = p >> (31 - i);
-			_putchar(b + 48);
-			cont++;
-		}
-	}
-	if (cont == 0)
-	{
-		cont++;
 		_putchar('0');
+		count++;
+		return (count);
 	}
-	return (cont);
+	while (num > 0)
+	{
+		binary[i] = num % 2;
+		num /= 2;
+		i++;
+	}
+	while (i > 0)
+	{
+		i--;
+		_putchar('0' + binary[i]);
+		count++;
+	}
+	return (count);
 }
