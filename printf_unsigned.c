@@ -1,44 +1,43 @@
 #include "main.h"
 
 /**
- * printf_unsigned - prints unsigned integer
- * @args: argument
- * Return: a number
+ * printf_unsigned - prints a binary number
+ * @num: number of arguements
+ * @count: the printed characters
+ * Return: printed charcaters
  */
-int printf_unsigned(va_list args)
+
+int printf_unsigned(unsigned int num, int count)
 {
-	unsigned int n = va_arg(args, unsigned int);
-	int num, last = n % 10, digit, exp = 1, i = 1;
+	int digits = 0;
+	unsigned int temp = num;
 
-	n = n / 10;
-	num = n;
+	do {
+		digits++;
+		temp /= 10;
+	} while (temp != 0);
 
-	if (last < 0)
+	if (num == 0)
 	{
-		_putchar('-');
-		num = -num;
-		n = -n;
-		last = -last;
-		i++;
+		_putchar('0');
+		count++;
 	}
-	if (num > 0)
+	else
 	{
-		while (num / 10 != 0)
+		char unsigned_str[11];
+		int i = 0;
+
+		while (num != 0)
 		{
-			exp = exp * 10;
-			num = num / 10;
-		}
-		num = n;
-		while (exp > 0)
-		{
-			digit = num / exp;
-			_putchar(digit + '0');
-			num = num - (digit * exp);
-			exp = exp / 10;
+			unsigned_str[i] = (num % 10) + '0';
+			num /= 10;
 			i++;
 		}
+		for (i = digits - 1; i >= 0; i--)
+		{
+			_putchar(unsigned_str[i]);
+			count++;
+		}
 	}
-	_putchar(last + '0');
-
-	return (i);
+	return (count);
 }

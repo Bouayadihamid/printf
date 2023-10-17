@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * printf_h - prints a binary
+ * _h - prints a binary
  * @num: num args
  * @count: print char
  * @uppercase: uppercase
  * Return: print char
  */
-int printf_h(unsigned int num, int count, int uppercase)
+int _h(unsigned int num, int count, int uppercase)
 {
 	int hex[100], i = 0, j;
 
