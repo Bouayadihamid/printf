@@ -2,7 +2,7 @@
 
 /**
  * printf_decimal - print a decimal number
- * @int: integer to be printed
+ * @n: integer to be printed
  * Return: count
  */
 int printf_decimal(int n)

@@ -2,7 +2,7 @@
 
 /**
  * print_integer - print an integer
- * @int: integer to be printed
+ * @n: integer to be printed
  * Return: count
  */
 int print_integer(int n)
