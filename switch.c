@@ -19,8 +19,7 @@ int selector(const char *format, va_list args, int count)
 		/*	count = printf_integer(args, format, count);*/
 			break;
 		case 'c':
-			_putchar(va_arg(args, int));
-			count++;
+			count += _putchar(va_arg(args, int));
 			break;
 		case 's':
 			count = printf_string(args, count);
@@ -47,7 +46,10 @@ int selector(const char *format, va_list args, int count)
 			count = printf_pointer(args, count);
 			break;
 		default:
-			count = handle_unknown_specifier(&format);
+
+			write(1, "%", 1);
+			_putchar(*format);
+			count += 2;
 			break;
 	}
 	return (count);
