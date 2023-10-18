@@ -3,7 +3,6 @@
 /**
  * selector - selects the appropriate specifiers
  * @args: number of arguements
- * @count: the printed characters
  * @format: the format specifier
  * Return: printed charcaters
  */
@@ -12,6 +11,7 @@ int selector(const char *format, va_list args)
 {
 	/* unsigned int num;*/
 	int count = 0;
+
 	switch (*format)
 	{
 		case 'd':
@@ -37,13 +37,6 @@ int selector(const char *format, va_list args)
 			break;
 		case 'o':
 			count = printf_octal(va_arg(args, unsigned int), count);
-			break;
-		case 'u':
-		/*	num = va_arg(args, unsigned int);*/
-		/*	count += printf_unsigned(num);*/
-			break;
-		case 'p':
-			count = printf_pointer(args, count);
 			break;
 		default:
 

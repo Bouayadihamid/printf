@@ -16,7 +16,7 @@ int printf_string(va_list args, int count)
 	if (string == NULL)
 	{
 		null = "(null)";
-		for(i = 0; i < 6; i++)
+		for (i = 0; i < 6; i++)
 		{
 			_putchar(*null);
 			null++;
