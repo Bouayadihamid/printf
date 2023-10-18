@@ -28,14 +28,13 @@ int _printf(const char *format, ...)
 				return (-1);
 			}
 			count = selector(format, args, count);
-			format++;
 		}
 		else
 		{
 			_putchar(*format);
 			count++;
-			format++;
 		}
+		format++;
 	}
 	va_end(args);
 	return (count);
