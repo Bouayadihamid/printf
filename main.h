@@ -19,6 +19,7 @@ int printf_unsigned(unsigned int num, int count);
 int printf_sreverse(va_list args, int count);
 int printf_pointer(va_list args, int count);
 int handle_unknown_specifier(const char **format);
-
+int printf_decimal(int n);
+int print_integer(int n);
 
 #endif

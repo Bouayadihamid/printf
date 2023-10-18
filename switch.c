@@ -15,8 +15,10 @@ int selector(const char *format, va_list args)
 	switch (*format)
 	{
 		case 'd':
+			count += printf_decimal(va_arg(args, int));
+			break;
 		case 'i':
-		/*	count = printf_integer(args, format, count);*/
+			count += print_integer(va_arg(args, int));
 			break;
 		case 'c':
 			count += _putchar(va_arg(args, int));
