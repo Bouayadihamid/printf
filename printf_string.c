@@ -10,8 +10,20 @@
 int printf_string(va_list args, int count)
 {
 	char *string = va_arg(args, char *);
+	char *null;
+	int i;
 
-	while (*string != '\0')
+	if (string == NULL)
+	{
+		null = "(null)";
+		for(i = 0; i < 6; i++)
+		{
+			_putchar(*null);
+			null++;
+		}
+		return (6);
+	}
+	while (*string)
 	{
 		_putchar(*string);
 		count++;
