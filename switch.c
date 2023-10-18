@@ -8,10 +8,10 @@
  * Return: printed charcaters
  */
 
-int selector(const char *format, va_list args, int count)
+int selector(const char *format, va_list args)
 {
 	/* unsigned int num;*/
-
+	int count;
 	switch (*format)
 	{
 		case 'd':
@@ -22,7 +22,7 @@ int selector(const char *format, va_list args, int count)
 			count += _putchar(va_arg(args, int));
 			break;
 		case 's':
-			count = printf_string(args, count);
+			count += printf_string(args, count);
 			break;
 		case '%':
 			_putchar('%');

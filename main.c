@@ -8,6 +8,9 @@
 
 int main(void)
 {
-_printf("%s\n", NULL);
+	count 1, count2;
+count = _printf("Hello  %s\n", "word");
+_printf("%c\n", 'm');
+_printf("%%\n");
 return (0);
 }

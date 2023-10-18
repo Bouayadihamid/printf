@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 			{
 				return (-1);
 			}
-			count = selector(format, args, count);
+			count += selector(format, args);
 		}
 		else
 		{
