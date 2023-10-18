@@ -11,7 +11,7 @@
 int selector(const char *format, va_list args)
 {
 	/* unsigned int num;*/
-	int count;
+	int count = 0;
 	switch (*format)
 	{
 		case 'd':

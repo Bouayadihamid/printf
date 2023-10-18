@@ -10,7 +10,7 @@ int _putchar(char c);
 int printf_char(va_list args, int count);
 int printf_string(va_list args, int count);
 int printf_integer(va_list args, int count);
-int selector(const char *format, va_list args, int count);
+int selector(const char *format, va_list args);
 int printf_binary(unsigned int num, int count);
 int _printf(const char *format, ...);
 int _h(unsigned int num, int count, int uppercase);
