@@ -10,11 +10,13 @@
 
 int selector(const char *format, va_list args, int count)
 {
+	/* unsigned int num;*/
+
 	switch (*format)
 	{
 		case 'd':
 		case 'i':
-			count = printf_integer(args, count);
+		/*	count = printf_integer(args, format, count);*/
 			break;
 		case 'c':
 			_putchar(va_arg(args, int));
@@ -38,7 +40,8 @@ int selector(const char *format, va_list args, int count)
 			count = printf_octal(va_arg(args, unsigned int), count);
 			break;
 		case 'u':
-			count = printf_unsigned(va_arg(args, int), count);
+		/*	num = va_arg(args, unsigned int);*/
+		/*	count += printf_unsigned(num);*/
 			break;
 		case 'p':
 			count = printf_pointer(args, count);

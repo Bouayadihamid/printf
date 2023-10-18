@@ -14,11 +14,19 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	while (*format != '\0')
+	if (!format)
+	{
+		return (-1);
+	}
+	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
+			if (*format == '\0')
+			{
+				return (-1);
+			}
 			count = selector(format, args, count);
 			format++;
 		}

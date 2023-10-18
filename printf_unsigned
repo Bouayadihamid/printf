@@ -3,14 +3,14 @@
 /**
  * printf_unsigned - prints a binary number
  * @num: number of arguements
- * @count: the printed characters
  * Return: printed charcaters
  */
 
-int printf_unsigned(unsigned int num, int count)
+unsigned int printf_unsigned(unsigned int num)
 {
 	int digits = 0;
 	unsigned int temp = num;
+	int count = 0;
 
 	do {
 		digits++;
